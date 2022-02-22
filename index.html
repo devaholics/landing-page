@@ -24,8 +24,9 @@
             height: 100vh;
         }
         #line-bottom {
-            position: absolute;
             background: #8772c0;
+            animation: pulse-violet 3s infinite;
+            position: absolute;
             width: var(--line-width);
             bottom: var(--line-spacing);
             height: var(--line-height);
@@ -33,8 +34,9 @@
             border-bottom-right-radius: var(--line-radius);
         }
         #line-top {
-            position: absolute;
             background: #b18434;
+            animation: pulse-orange 3s infinite;
+            position: absolute;
             right: 0;
             width: var(--line-width);
             top: var(--line-spacing);
@@ -68,16 +70,43 @@
             cursor: pointer;
             display: flex;
             margin-top: 2rem;
-            color: #272729;
-            background: #b18434;
+            color: #b7c2c3;
+            border: #8772c0 2px solid;
             width: fit-content;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             padding: 0.7rem 1rem;
             border-radius: 5rem;
+            transition: all 250ms;
+        }
+        #contact:hover {
+            background: #8772c0;
         }
         #mail-icon {
             margin-right: 0.5rem;
         }
+        @keyframes pulse-violet {
+            0% {
+                background: #8772c0;
+            }
+            50% {
+                background: #d0c3f2;
+            }
+            0% {
+                background: #8772c0;
+            }
+        }
+        @keyframes pulse-orange {
+            0% {
+                background: #b18434;
+            }
+            50% {
+                background: #ecd3a6;
+            }
+            0% {
+                background: #b18434;
+            }
+        }
+
     </style>
 </head>
 <body>
