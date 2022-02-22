@@ -10,6 +10,9 @@
             --line-height: 7rem;
             --line-radius: 3.5rem;
             --line-width: 25%;
+            --violet: #8772c0;
+            --orange: #b18434;
+            --color-font: #b7c2c3;
         }
         body {
             margin: 0;
@@ -24,7 +27,7 @@
             height: 100vh;
         }
         #line-bottom {
-            background: #8772c0;
+            background: var(--violet);
             animation: pulse-violet 3s infinite;
             position: absolute;
             width: var(--line-width);
@@ -34,7 +37,7 @@
             border-bottom-right-radius: var(--line-radius);
         }
         #line-top {
-            background: #b18434;
+            background: var(--orange);
             animation: pulse-orange 3s infinite;
             position: absolute;
             right: 0;
@@ -70,8 +73,8 @@
             cursor: pointer;
             display: flex;
             margin-top: 2rem;
-            color: #b7c2c3;
-            border: #8772c0 2px solid;
+            color: var(--color-font);
+            border: var(--violet) 2px solid;
             width: fit-content;
             font-size: 1.1rem;
             padding: 0.7rem 1rem;
@@ -79,31 +82,31 @@
             transition: all 250ms;
         }
         #contact:hover {
-            background: #8772c0;
+            background: var(--violet);
         }
         #mail-icon {
             margin-right: 0.5rem;
         }
         @keyframes pulse-violet {
             0% {
-                background: #8772c0;
+                background: var(--violet);
             }
             50% {
                 background: #d0c3f2;
             }
             0% {
-                background: #8772c0;
+                background: var(--violet);
             }
         }
         @keyframes pulse-orange {
             0% {
-                background: #b18434;
+                background: var(--orange);
             }
             50% {
                 background: #ecd3a6;
             }
             0% {
-                background: #b18434;
+                background: var(--orange);
             }
         }
 
