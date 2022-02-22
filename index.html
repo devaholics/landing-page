@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Devaholics - Addicted to building Software</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+        :root {
+            --line-spacing: 4rem;
+            --line-height: 7rem;
+            --line-radius: 3.5rem;
+            --line-width: 25%;
+        }
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+        #content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+        }
+        #line-bottom {
+            position: absolute;
+            background: #8772c0;
+            width: var(--line-width);
+            bottom: var(--line-spacing);
+            height: var(--line-height);
+            border-top-right-radius: var(--line-radius);
+            border-bottom-right-radius: var(--line-radius);
+        }
+        #line-top {
+            position: absolute;
+            background: #b18434;
+            right: 0;
+            width: var(--line-width);
+            top: var(--line-spacing);
+            height: var(--line-height);
+            border-top-left-radius: var(--line-radius);
+            border-bottom-left-radius: var(--line-radius);
+        }
+        #dot-top {
+            position: absolute;
+            background: #272729;
+            top: var(--line-spacing);
+            right: calc(var(--line-width) + 3rem);
+            height: var(--line-height);
+            width: var(--line-height);
+            border-radius: 50%;
+        }
+        #background {
+            z-index: -1;
+            background: #1b1b1c;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        #logo {
+            margin-top: 7rem;
+            width: 50%;
+        }
+        #contact {
+            cursor: pointer;
+            display: flex;
+            margin-top: 2rem;
+            color: #272729;
+            background: #b18434;
+            width: fit-content;
+            font-size: 1.2rem;
+            padding: 0.7rem 1rem;
+            border-radius: 5rem;
+        }
+        #mail-icon {
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="background">
+        <div id="line-bottom"></div>
+        <div id="line-top"></div>
+        <div id="dot-top"></div>
+    </div>
+    <div id="content">
+        <img src="assets/logo.svg" id="logo" alt="Devaholics Logo" />
+        <div id="contact">
+            <img src="assets/email.svg" id="mail-icon" alt="Mail Icon" />
+            &#x63;&#x6F;&#x6E;&#x74;&#x61;&#x63;&#x74;&#x40;&#x64;&#x65;&#x76;&#x61;&#x68;&#x6F;&#x6C;&#x69;&#x63;&#x73;&#x2E;&#x69;&#x6F;
+        </div>
+    </div>
+<script>
+    document.getElementById("contact")
+    .addEventListener("click", () => {
+        const emailTo = atob("Y29udGFjdEBkZXZhaG9saWNzLmlv")
+        window.open('mailto:' + emailTo, '_blank');
+    });
+</script>
+</body>
+</html>
