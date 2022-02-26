@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Devaholics - Addicted to building Software</title>
+    <link rel="icon" href="assets/icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
         :root {
@@ -10,13 +12,15 @@
             --line-height: 7rem;
             --line-radius: 3.5rem;
             --line-width: 25%;
-            --violet: #8772c0;
+            --violet: #917fb9;
             --orange: #b18434;
             --color-font: #b7c2c3;
+            --grey: #272729;
         }
-        body {
+        html, body {
             margin: 0;
             font-family: 'Inter', sans-serif;
+            background: #1b1b1c;
         }
         #content {
             display: flex;
@@ -49,7 +53,7 @@
         }
         #dot-top {
             position: absolute;
-            background: #272729;
+            background: var(--grey);
             top: var(--line-spacing);
             right: calc(var(--line-width) + 3rem);
             height: var(--line-height);
@@ -57,8 +61,6 @@
             border-radius: 50%;
         }
         #background {
-            z-index: -1;
-            background: #1b1b1c;
             position: absolute;
             top: 0;
             bottom: 0;
@@ -109,12 +111,55 @@
                 background: var(--orange);
             }
         }
+        @media screen and (max-width: 700px) {
+            #logo {
+                width: calc(100% - 4rem);
+            }
+        }
+        @media screen and (max-width: 900px) {
+            :root {
+                --line-spacing: 4rem;
+                --line-height: 3rem;
+                --line-radius: 1.5rem;
+                --line-width: 35%;
+            }
+            #logo {
+                width: 75%;
+            }
+            #contact {
+                font-size: 1em;
+            }
+            #mail-icon {
+                height: 1.3rem;
+            }
+            #line-top {
+                margin-top: 1rem;
+            }
+            #line-bottom {
+                bottom: calc(var(--line-spacing) * 2 + 0.5rem);
+            }
+            #dot-top {
+                margin-top: 1rem;
+                margin-right: -1.5rem;
+            }
+            #line-bottom-mobile {
+                background: var(--grey);
+                position: absolute;
+                color: var(--grey);
+                height: var(--line-height);
+                bottom: var(--line-spacing);
+                width: calc(var(--line-width) + 10%);
+                border-top-right-radius: var(--line-radius);
+                border-bottom-right-radius: var(--line-radius);
+            }
+        }
 
     </style>
 </head>
 <body>
     <div id="background">
         <div id="line-bottom"></div>
+        <div id="line-bottom-mobile"></div>
         <div id="line-top"></div>
         <div id="dot-top"></div>
     </div>
