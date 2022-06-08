@@ -1,0 +1,16 @@
+name: Deploy the website
+
+on: push
+
+jobs:
+  copy_files_to_server:
+    name: Copy the files to the remote server
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Execute scp command
+        run: |
+          echo "${{ secrets.DEPLOYMENT_SSH_PRIVATE_KEY }}" > /tmp/id_rsa
+          sudo chmod 600 /tmp/id_rsa
+          scp -i /tmp/id_rsa -r docs/* devahou@www138.your-server.de:/public_html
