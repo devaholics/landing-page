@@ -12,5 +12,10 @@ jobs:
       - name: Execute scp command
         run: |
           echo "${{ secrets.DEPLOYMENT_SSH_PRIVATE_KEY }}" > /tmp/id_rsa
+          echo "${{ secrets.DEPLOYMENT_SSH_KNOWN_HOST_KEYS }}" > /tmp/known_hosts
           sudo chmod 600 /tmp/id_rsa
-          scp -i /tmp/id_rsa -r docs/* devahou@www138.your-server.de:/public_html
+          scp \
+            -i /tmp/id_rsa \
+            -o "UserKnownHostsFile /tmp/known_hosts" \
+            -r docs/* devahou@www138.your-server.de:/public_html
+          rm -rf /tmp
