@@ -18,4 +18,4 @@ jobs:
             -i /tmp/id_rsa \
             -o "UserKnownHostsFile /tmp/known_hosts" \
             -r docs/* devahou@www138.your-server.de:/public_html
-          rm -rf /tmp
+          rm /tmp/id_rsa /tmp/known_hosts
